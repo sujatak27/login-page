@@ -10,12 +10,12 @@ import "../styles/Profile.css";
 import { useNavigate } from 'react-router';
 
 let userdata = JSON.parse(localStorage.getItem("userdata"));
-
 let userId = JSON.parse(localStorage.getItem("userId"));
 
 console.log(userId);
 
-const Profile = () => {
+const Profile = () => 
+  {
   const [userData, setUserData] = useState();
 
   let { userId, setUserId } = useContext(CreateContext);
@@ -27,6 +27,7 @@ const Profile = () => {
       .catch((error) => console.log(error));
     console.log(responce.data);
     setUserData(responce.data);
+    
   }
 
   useEffect(() => {
@@ -34,7 +35,7 @@ const Profile = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // console.log(userData) ;
+   console.log(userData) ;
 
   let navigate = useNavigate();
 
